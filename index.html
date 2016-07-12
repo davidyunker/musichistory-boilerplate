@@ -3,82 +3,90 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="main.css">
   <title>Music History</title>
 </head>
-
-  <nav>
-    <ul>
-      <li><a href="#">View music</li>
-      <li><a href="#">Add music</li>
-      <li><a href="#">Profile</li>
-    </ul>
-  </nav>
 <body>
-  <div class="leftcol">
-    
-    <h3>Song length</h3> 
-    
-    <h3>Artist:</h3>
-      <select name="Options:">
-        <option value="Tool"></option>
-        <option value="Beyonce"></option>
-        <option value="Sia"></option>
-        <option value="Lady Gaga"></option>
-        <option value="The Weeknd"></option>
-      </select> 
 
-    <h3>Album:</h3>
-      <select name="Options:">
-        <option value="10,000 Days"></option>
-        <option value="Lemonade"></option>
-        <option value="This Is Acting"></option>
-        <option value="Artpop"></option>
-        <option value="Beauty behind the madness"></option>
-      </select>
+  <div class="container">
+      <div class="topnav">
+        <ul>
+          <li><a class="nounderline" href="#">View music</a> | </li> 
+          <li><a href="#">Add music</a> | </li> 
+          <li><a href="#">Profile</a></li>
+        </ul>
+      </nav>
 
-
-
-
-   
-
-    <form action="">
-      <label for="musictype">Genre:</label>
-
-      <label for="rock">Rock:</label>
-      <input type="checkbox" name="rock" id="rock"> 
-
-      <label for="pop">Pop:</label>
-      <input type="checkbox" name="pop" id="pop"> 
+      <div class="leftcol">
+          <label for="songlength">Song length:</label> 
+          <input type="range" name="songlength" id="songlength"> 
       
-      <label for="blues">Blues:</label>
-      <input type="checkbox" name="blues" id="blues"> 
 
-      <label for="classical">Classical:</label>
-      <input type="checkbox" name="classical" id="classical"> 
+        
+        <legend>Artist</legend>
+          <select name="artists">
+            <option value="value0">Options</option>
+            <option value="value1">Tool</option>
+            <option value="value2">Beyonce</option>
+            <option value="value3">Sia</option>
+            <option value="value4">Lady Gaga</option>
+            <option value="value5">The Weeknd</option>
+          </select> 
 
-      <label for="jazz">Jazz:</label>
-      <input type="checkbox" name="jazz" id="jazz"> 
+        <legend>Album:</legend>
+          <select name="songs">
+            <option value="value0">Options</option>
+            <option value="value1">10,000 Days</option>
+            <option value="value2">Lemonade</option>
+            <option value="value3">This Is Acting</option>
+            <option value="value4">Artpop</option>
+            <option value="value5">Beauty Behind the Madness</option>
+          </select>
 
-      <label for="hiphop">Hip hop:</label>
-      <input type="checkbox" name="hiphop" id="hiphop"> 
-    </form>
+
+
+
+       
+
+        <form action="">
+          <legend>Genre:</legend>
+         
+          <label for="rock">Rock</label>
+          <input type="checkbox" name="rock" id="rock"> 
+
+          <label for="classical">Classical</label>
+          <input type="checkbox" name="classical" id="classical"> 
+
+          <label for="pop">Pop</label>
+          <input type="checkbox" name="pop" id="pop"> 
+
+           <label for="jazz">Jazz</label>
+          <input type="checkbox" name="jazz" id="jazz"> 
+     
+          <label for="blues">Blues</label>
+          <input type="checkbox" name="blues" id="blues">          
+
+          <label for="hiphop">Hip hop</label>
+          <input type="checkbox" name="hiphop" id="hiphop"> 
+
+          <input type="button" value="Filter">
+        </form>
+      </div>
+      
+      <div class="centercol">
+        <h1>Unstoppable</h1>
+          <p> Sia | This Is Acting | Pop </p>
+
+        <h1>Daddy Lessons</h1>
+          <p> Beyonce | Lemonade | Pop </p>
+
+        <h1>Right in Two</h1>
+          <p> Tool | 10,000 Days | Rock </p>
+
+        <h1>Often</h1>
+          <p> The Weeknd| Beauty Behind The Madness | Hip hop </p>
+      </div>
   </div>
-  
-  <div class="centercol">
-    <h1>Unstoppable</h1>
-      <p> Sia | This Is Acting | Pop </p>
-
-    <h1>Daddy Lessons</h1>
-      <p> Beyonce | Lemonade | Pop </p>
-
-    <h1>Right in Two</h1>
-      <p> Tool | 10,000 Days | Rock </p>
-
-    <h1>Often</h1>
-      <p> The Weeknd| Beauty Behind The Madness | Hip hop </p>
-  </div>
-
-
-
 </body>
+</div>
 </html>
