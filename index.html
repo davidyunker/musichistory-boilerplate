@@ -11,20 +11,20 @@
   <div class="container">
       <div class="topnav">
         <ul>
-          <li><a class="nounderline" href="#">View music</a> | </li> 
-          <li><a href="#">Add music</a> | </li> 
+          <li><a class="nounderline" href="#">View music</a> | </li>
+          <li><a href="#">Add music</a> | </li>
           <li><a href="#">Profile</a></li>
         </ul>
       </nav>
 
-   
+
 
       <div class="leftcol">
-          <label for="songlength">Song length:</label> 
-          <input type="range" name="songlength" id="songlength"> 
-      
+          <label for="songlength">Song length:</label>
+          <input type="range" name="songlength" id="songlength">
 
-        
+
+
         <legend>Artist</legend>
           <select name="artists">
             <option value="value0">Options</option>
@@ -33,7 +33,7 @@
             <option value="value3">Sia</option>
             <option value="value4">Lady Gaga</option>
             <option value="value5">The Weeknd</option>
-          </select> 
+          </select>
 
         <legend>Album:</legend>
           <select name="songs">
@@ -48,33 +48,39 @@
 
 
 
-       
+
 
         <form action="">
           <legend>Genre:</legend>
-         
+
+        <div class="checkboxes">
+
+          <input type="checkbox" name="rock" id="rock">
           <label for="rock">Rock</label>
-          <input type="checkbox" name="rock" id="rock"> 
 
+
+          <input type="checkbox" name="classical" id="classical">
           <label for="classical">Classical</label>
-          <input type="checkbox" name="classical" id="classical"> 
 
+          <input type="checkbox" name="pop" id="pop">
           <label for="pop">Pop</label>
-          <input type="checkbox" name="pop" id="pop"> 
 
+          <input type="checkbox" name="jazz" id="jazz">
            <label for="jazz">Jazz</label>
-          <input type="checkbox" name="jazz" id="jazz"> 
-     
-          <label for="blues">Blues</label>
-          <input type="checkbox" name="blues" id="blues">          
 
+
+          <input type="checkbox" name="blues" id="blues">
+          <label for="blues">Blues</label>
+
+          <input type="checkbox" name="hiphop" id="hiphop">
           <label for="hiphop">Hip hop</label>
-          <input type="checkbox" name="hiphop" id="hiphop"> 
+        </div>
 
           <input type="button" value="Filter">
         </form>
+
       </div>
-      
+
       <div class="centercol">
         <h1>Unstoppable</h1>
           <p> Sia | This Is Acting | Pop </p>
@@ -89,6 +95,7 @@
           <p> The Weeknd| Beauty Behind The Madness | Hip hop </p>
       </div>
   </div>
+<script src="songs.js"></script>
 </body>
 </div>
 </html>
