@@ -30,22 +30,28 @@ for (var i = 0; i < songs.length; i++) {
   songs[i] = songs[i].replace('(', '');
   songs[i] = songs[i].replace('!', '');
   songs[i] = songs[i].replace('@', '');
+
+var songbox = document.getElementById("centercol");
+songbox.innerHTML += `<p>${songs[i]}</p>`
 }
-// console.log(songs);
-var newTracks = "";
+// this works! but you have to fix
 
-for (var i = 0; i < songs.length; i++) {
-  newTracks += "<p>";
-  newTracks += songs[i];
-  newTracks += "</p>";
-}
-console.log(newTracks);
 
-document.getElementsByClassName(centercol).innerHTML = newTracks
 
-// var moreSongs = songs.push("Me Too - by Meghan Trainor on the album Thank You");
-// var evenMoreSongs = moreSongs.unshift("Into You - by Ariana Grande on the album Dangerous Woman");
-// // songs = songs.unshift("Into You - by Ariana Grande on the album Dangerous Woman");
+
+
+// var songTitles = [];
+
+// for (var i = 0; i < songs.length; i++) {
+//   var songBreak = songs[i].indexOf("-");
+//   if (songBreak !== -1) {
+//     songTitles += songs[i].slice(0, songBreak);
+//     }
+//   }
+
+// console.log(songTitles);
+
+
 
 
 

@@ -64,7 +64,7 @@ height: 100%;
 }
 
 
-div.centercol {
+div#centercol {
   background-color: #FEFAC0;
   display: inline-block;
   float: left;
