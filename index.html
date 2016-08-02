@@ -9,15 +9,15 @@
 <body>
 
   <div class="container">
+
       <div class="topnav">
         <ul>
-          <li><a class="nounderline" href="#">View music</a> | </li>
-          <li><a href="#">Add music</a> | </li>
-          <li><a href="#">Profile</a></li>
+            <li><a href="#" id="link-home">Home</a> | </li>
+            <li><a href="#" id="link-add">Add music</a> | </li>
         </ul>
       </nav>
 
-
+      <section id="home-view">
 
       <div class="leftcol">
           <label for="songlength">Song length:</label>
@@ -94,9 +94,24 @@
         <h1>Often</h1>
           <p> The Weeknd| Beauty Behind The Madness | Hip hop </p>
       </div>
+    </div>
+    </section>
 
-  </div>
-<script src="songs.js"></script>
+    <section class="hidden" id="add-view">
+
+        <label for="song">Song</label>
+        <input type="text" id="song"><br>
+        <label for="artist">Artist</label>
+        <input type="text" id="artist"><br>
+        <label for="album">Album</label>
+        <input type="text" id="album">
+        <input type="button" value="Add">
+    </section>
+
+
+<script type="text/javascript" src="songs.js"></script>
+<script type="text/javascript" src="add.js"></script>
+<script type="text/javascript" src="home.js"></script>
 </body>
 </div>
 </html>
