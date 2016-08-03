@@ -40,6 +40,42 @@ songbox.innerHTML += `<p>${songs[i]}</p>`
 
 
 
+
+// songs.push += newEntererdSongs;
+//   songbox.innerHTML += `<p>${newEntererdSongs}</p>`;
+
+var songAdder = document.getElementById("addbutton");
+songAdder.addEventListener("click", getNewSongs);
+
+
+function getNewSongs() {
+
+var songsFieldSong = document.getElementById("song").value;
+var songsFieldArtist = document.getElementById("artist").value;
+var songsFieldAlbum = document.getElementById("album").value;
+// var newEntererdSongs = songsFieldSong + songsFieldArtist + songFieldAlbum;
+
+// console.log(songsFieldSong);
+
+// console.log(songsFieldArtist);
+
+// console.log(songsFieldAlbum);
+
+console.log(songs.length);
+var newEntererdSongs = songsFieldSong + " "  + "-" + " " + songsFieldArtist + " " + songsFieldAlbum;
+console.log(newEntererdSongs);
+songs.push(newEntererdSongs);
+console.log(songs.length);
+
+
+var songbox = document.getElementById("centercol");
+songbox.innerHTML += `<p>${newEntererdSongs}</p>`
+}
+
+
+
+
+
 // var songTitles = [];
 
 // for (var i = 0; i < songs.length; i++) {
