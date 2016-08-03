@@ -1,11 +1,3 @@
-// Each student must add one song to the beginning and the end of the array.
-// Loop over the array and remove any words or characters that obviously don't belong.
-
-// Students must find and replace the > character in each item with a - character.
-// Must add each string to the DOM in index.html in the main content area.
-
-
-
 var songs = [];
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
@@ -20,7 +12,6 @@ songs.unshift("Into You - by Ariana Grande on the album Dangerous Woman");
 
 
 
-// Students must find and replace the > character in each item with a - character.
 
 
 
@@ -39,11 +30,6 @@ songbox.innerHTML += `<p>${songs[i]}</p>`
 
 
 
-
-
-// songs.push += newEntererdSongs;
-//   songbox.innerHTML += `<p>${newEntererdSongs}</p>`;
-
 var songAdder = document.getElementById("addbutton");
 songAdder.addEventListener("click", getNewSongs);
 
@@ -53,16 +39,10 @@ function getNewSongs() {
 var songsFieldSong = document.getElementById("song").value;
 var songsFieldArtist = document.getElementById("artist").value;
 var songsFieldAlbum = document.getElementById("album").value;
-// var newEntererdSongs = songsFieldSong + songsFieldArtist + songFieldAlbum;
 
-// console.log(songsFieldSong);
-
-// console.log(songsFieldArtist);
-
-// console.log(songsFieldAlbum);
 
 console.log(songs.length);
-var newEntererdSongs = songsFieldSong + " "  + "-" + " " + songsFieldArtist + " " + songsFieldAlbum;
+var newEntererdSongs = songsFieldSong + " "  + "- " + "by " + songsFieldArtist + " "  + "on the album " + songsFieldAlbum;
 console.log(newEntererdSongs);
 songs.push(newEntererdSongs);
 console.log(songs.length);
@@ -70,24 +50,41 @@ console.log(songs.length);
 
 var songbox = document.getElementById("centercol");
 songbox.innerHTML += `<p>${newEntererdSongs}</p>`
+
+
 }
 
 
 
+/////////////////
 
+ var moreSongs = (function () {
+  var loadSongs = [];
 
-// var songTitles = [];
+  return {
+    getSongs: function (cb) {
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET', 'songs.json')
+      xhr.addEventListener('load', function (evt) {
+        songsJSON = JSON.parse(evt.target.responseText).songs
+        cb(songsJSON)
+      })
+      xhr.send()
+    },
+    populatePage: function () {
+      var container = document.querySelector("#centercol")
 
-// for (var i = 0; i < songs.length; i++) {
-//   var songBreak = songs[i].indexOf("-");
-//   if (songBreak !== -1) {
-//     songTitles += songs[i].slice(0, songBreak);
-//     }
-//   }
+      songsJSON.forEach(function(songs) {
+        container.innerHTML += `
+          <h5>${songs.songName}</h5>
+          <h4>${songs.artistName}</h4>
+          <h4>${songs.albumName}</h4>`
+    })
+  }
+}
 
-// console.log(songTitles);
+})(moreSongs || {})
 
-
-
+moreSongs.getSongs(moreSongs.populatePage)
 
 

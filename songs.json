@@ -1,0 +1,31 @@
+{
+  "songs": [{
+      "songName": "Thriller",
+      "artistName": "Michael Jackson",
+      "albumName": "Thriller"
+
+    }, {
+      "songName": "Maps",
+      "artistName": "Yeah Yeah Yeahs",
+      "albumName": "Fever to Tell"
+
+    }, {
+      "songName": "Rise",
+      "artistName": "Katy Perry",
+      "albumName": "2016 Olympics"
+
+    }, {
+      "songName": "Slow",
+      "artistName": "Kylie Minogue",
+      "albumName": "Body Language"
+
+    }, {
+      "titleName": "Trapped in the Closet",
+      "artistName": "R Kelly",
+      "albumName": "TP3 Reloaded"
+
+    }
+
+
+  ]
+}
