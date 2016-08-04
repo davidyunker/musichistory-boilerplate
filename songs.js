@@ -54,6 +54,16 @@ songbox.innerHTML += `<p>${newEntererdSongs}</p>`
 
 }
 
+// var deleteButton = document.getElementById("delete");
+// deleteButton.addEventListener("click", deleteSong);
+
+// console.log(evt);
+
+// function deleteSong () {
+//   var container = document.querySelector("#centercol");
+//   container = container.removeChild(jsonSong);
+
+// }
 
 
 /////////////////
@@ -72,19 +82,34 @@ songbox.innerHTML += `<p>${newEntererdSongs}</p>`
       xhr.send()
     },
     populatePage: function () {
-      var container = document.querySelector("#centercol")
+      var container = document.querySelector("#list-view")
 
-      songsJSON.forEach(function(songs) {
-        container.innerHTML += `
-          <h5>${songs.songName}</h5>
-          <h4>${songs.artistName}</h4>
-          <h4>${songs.albumName}</h4>`
-    })
-  }
-}
+      songsJSON.forEach(function(songs) {         container.innerHTML +=
+`<span class="jsonSong"> <strong>${songs.songName}</strong>
+${songs.artistName} ${songs.albumName}<input type="button" class="delete"
+value="Delete"></span><br>`
+ })   } }
 
 })(moreSongs || {})
 
 moreSongs.getSongs(moreSongs.populatePage)
 
+////////notes on how to delete
 
+
+
+
+document.querySelector("body").addEventListener("click", function(event) {
+  console.log(event);
+  console.log(event.target.parentElement)
+  if (event.target.className ===
+    "delete") {
+
+  // var child = document.getElementById("outputSpan");
+  // var parent = document.getElementById("outputDiv");
+  // parent.removeChild(child);
+  event.target.parentElement.remove();
+
+  console.log(messagesLogged);
+  }
+})
