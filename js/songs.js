@@ -24,7 +24,18 @@ $.getJSON("songs.json").then(function (data) {
   populateSongs(songs)
 })
 
-//Grabs the second JSON file and appends each song onto the end of the array
+
+var request = $.ajax({
+  url: "",
+  method: "POST",
+  data: { id : menuId },
+  dataType: "json"
+});
+
+request.done(function( data ) {
+  $( "#log" ).html( msg );
+});
+
 
 function loadMoreSongs () {
   $.getJSON("othersongs.json").then(function (data) {
@@ -36,10 +47,7 @@ function loadMoreSongs () {
   })
 }
 
-//ADD MUSIC SECTION
 
-//Trying to give each song an individual ID based on their index in the array each time populateSongs runs
-//This would make the deleteSong function work with the array slice/splice/whatever method
 
 function populateSongs(songs) {
   $("#results").html("")
