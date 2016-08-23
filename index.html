@@ -1,125 +1,114 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="main.css">
   <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
-  <div class="container">
+<div class="container"> <!-- BOOSTRAP CONTAINER START -->
 
-      <div class="topnav">
-        <ul>
-            <li><a href="#" id="link-home">Home</a> | </li>
-            <li><a href="#" id="link-list">List</a> | </li>
-            <li><a href="#" id="link-add">Add music</a> | </li>
-        </ul>
-      </nav>
+<!-- NAVIGATION BAR -->
 
-      <section id="home-view">
+  <nav id="navbar" class="border col-md-12 row">
+    <ul>
+      <a href="#" id="homeLink"><li>View Music</li></a>
+      <a href="#addMusic" id="addMusicLink"><li>Add Music</li></a>
+      <a href="#profile" id="profileLink"><li>Profile</li></a>
+    </ul>
+  </nav>
 
-      <div class="leftcol">
-          <label for="songlength">Song length:</label>
-          <input type="range" name="songlength" id="songlength">
+<!-- SIDE BAR -->
 
+<div id="mainContent">
+  <section id="sidebar" class="border row">
 
+    <form id="searchForm">
+      <!-- SONG LENGTH SLIDER -->
+      <h2>Song Length</h2>
+      <input type="range" name="songLength" min="0" max="600">
 
-        <legend>Artist</legend>
-          <select name="artists">
-            <option value="value0">Options</option>
-            <option value="value1">Tool</option>
-            <option value="value2">Beyonce</option>
-            <option value="value3">Sia</option>
-            <option value="value4">Lady Gaga</option>
-            <option value="value5">The Weeknd</option>
-          </select>
+      <!-- ARTIST OPTION BOX-->
+      <h4>Artist:</h4>
+      <select name="artistOption">
+        <option value="Tool" selected="">Tool</option>
+        <option value="Beyonce">Beyonce</option>
+        <option value="Sia">Sia</option>
+        <option value="Lady Gaga">Lady Gaga</option>
+        <option value="The Weeknd">The Weeknd</option>
+      </select>
 
-        <legend>Album:</legend>
-          <select name="songs">
-            <option value="value0">Options</option>
-            <option value="value1">10,000 Days</option>
-            <option value="value2">Lemonade</option>
-            <option value="value3">This Is Acting</option>
-            <option value="value4">Artpop</option>
-            <option value="value5">Beauty Behind the Madness</option>
-          </select>
+      <!-- ALBUM OPTION BOX-->
 
-
-
-
-
-
-        <form action="">
-          <legend>Genre:</legend>
-
-        <div class="checkboxes">
-
-          <input type="checkbox" name="rock" id="rock">
-          <label for="rock">Rock</label>
+      <h4>Album:</h4>
+      <select name="albumOption">
+        <option value="10,000 Days" selected="">10,000 Days</option>
+        <option value="Lemonade">Lemonade</option>
+        <option value="This Is Acting">This Is Acting</option>
+        <option value="Artpop">Artpop</option>
+        <option value="Beauty Behind the Madness">Beauty Behind the Madness</option>
+      </select>
 
 
-          <input type="checkbox" name="classical" id="classical">
-          <label for="classical">Classical</label>
-
-          <input type="checkbox" name="pop" id="pop">
-          <label for="pop">Pop</label>
-
-          <input type="checkbox" name="jazz" id="jazz">
-           <label for="jazz">Jazz</label>
-
-
-          <input type="checkbox" name="blues" id="blues">
-          <label for="blues">Blues</label>
-
-          <input type="checkbox" name="hiphop" id="hiphop">
-          <label for="hiphop">Hip hop</label>
-        </div>
-
-          <input type="button" value="Filter">
-        </form>
-
+      <!-- GENRE CHECKBOXES -->
+      <h2>Genre</h2>
+      <div class="j">
+        <label><input type="checkbox" class="genreBox" name="genre" value="Rock">Rock</label>
+        <label><input type="checkbox" class="genreBox" name="genre" value="Pop">Pop</label>
+      </div>
+      <div>
+        <label><input type="checkbox" class="genreBox" name="genre" value="Jazz">Jazz</label>
+        <label><input type="checkbox" class="genreBox" name="genre" value="Hip-Hop">Hip-Hop</label>
+      </div>
+      <div>
+        <label><input type="checkbox" class="genreBox" name="genre" value="Alternative">Alternative</label>
+        <label><input type="checkbox" class="genreBox" name="genre" value="Blues">Blues</label>
       </div>
 
-      <div id="centercol">
-        <h1>Unstoppable</h1>
-          <p> Sia | This Is Acting | Pop </p>
+      <input type="button" name="filter" value="Filter" class="block">
+    </form>
 
-        <h1>Daddy Lessons</h1>
-          <p> Beyonce | Lemonade | Pop </p>
+  </section>
 
-        <h1>Right in Two</h1>
-          <p> Tool | 10,000 Days | Rock </p>
+<!-- RESULTS FIELD -->
 
-        <h1>Often</h1>
-          <p> The Weeknd| Beauty Behind The Madness | Hip hop </p>
-      </div>
+  <section id="results" class="row border"></section>
+
+
+</div> <!--END MAIN CONTENT DIV-->
+
+<div id="addMusic" class="hidden">
+  <section class="row col-md-4"></section> <!--SPACE DIV-->
+  <section id="addMusicForm" class="border row col-md-4">
+    <div class="block">
+    <label>Song Name: <input type="textarea" name="name" id="addName"></label>
     </div>
-    </section>
+    <div class="block">
+    <label>Artist: <input type="textarea" name="artist" id="addArtist"></label>
+    </div>
+    <div class="block">
+    <label>Album: <input type="textarea" name="album" id="addAlbum"></label>
+    </div>
+    <div class="block">
+    <select name="genreAddOption" id="addGenre">
+      <option value="Rock" selected="">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Hip-Hop">Hip-Hop</option>
+      <option value="Alternative">Alternative</option>
+      <option value="Blues">Blues</option>
+    </select>
+    </div>
 
-    <section class="hidden" id="list-view">
-
-
-
-    </section>
-
-    <section class="hidden" id="add-view">
-
-        <label for="song">Song</label>
-        <input type="text" id="song"><br>
-        <label for="artist">Artist</label>
-        <input type="text" id="artist"><br>
-        <label for="album">Album</label>
-        <input type="text" id="album">
-        <input type="button" id="addbutton" value="Add">
-    </section>
-
-
-<script type="text/javascript" src="list.js"></script>
-<script type="text/javascript" src="add.js"></script>
-<script type="text/javascript" src="home.js"></script>
-<script type="text/javascript" src="songs.js"></script>
-</body>
+    <button id="addButton">Add</button>
+  </section>
 </div>
+
+</div><!-- BOOSTRAP CONTAINER END -->
+
+
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="js/songs.js"></script>
+</body>
 </html>

@@ -1,0 +1,18 @@
+{
+  "songs": [
+
+{
+      "name": "Slow",
+      "artist": "Kylie Minogue",
+      "album": "Body Language",
+      "genre": "Pop"
+
+    }, {
+      "name": "Trapped in the Closet",
+      "artist": "R Kelly",
+      "album": "TP3 Reloaded",
+      "genre": "Hip-Hop"
+
+    }
+  ]
+}

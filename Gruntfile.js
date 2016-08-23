@@ -1,23 +1,37 @@
+// *************************************************
+// ** Remember to npm install grunt-contrib-sass` **
+// *************************************************
+
 module.exports = function(grunt) {
 
-   // Load the plugin that provides the "jshint" task.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-
-  // Project configuration.
   grunt.initConfig({
+    browserify: {
+      '../dist/app.js': ['../js/quiz.js']
+    },
     jshint: {
-      files: ['./**/*.js', '!./node_modules/**/*'],
       options: {
-        jshintrc: true
+        predef: [ "document", "console" ],
+        esnext: true,
+        globalstrict: true,
+        browserify: true
+      },
+      files: ['../js/**/*.js']
+    },
+    sass: {
+      dist: {
+        files: {
+          '../css/main.css': '../sass/main.scss'
+        }
       }
     },
     watch: {
-      files: ['./**/*.js', '!./node_modules/**/*'],
-      tasks: ['jshint'],
+      javascripts: {
+        files: ['../js/**/*.js'],
+        tasks: ['jshint', 'browserify']
+      }
     }
-
   });
 
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.registerTask('default', ['jshint', 'sass', 'browserify', 'watch']);
 };

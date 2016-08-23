@@ -1,31 +1,23 @@
 {
   "songs": [{
-      "songName": "Thriller",
-      "artistName": "Michael Jackson",
-      "albumName": "Thriller"
+      "name": "Thriller",
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "genre": "Pop"
 
     }, {
-      "songName": "Maps",
-      "artistName": "Yeah Yeah Yeahs",
-      "albumName": "Fever to Tell"
+      "name": "Maps",
+      "artist": "Yeah Yeah Yeahs",
+      "album": "Fever to Tell",
+      "genre": "Rock"
 
     }, {
-      "songName": "Rise",
-      "artistName": "Katy Perry",
-      "albumName": "2016 Olympics"
-
-    }, {
-      "songName": "Slow",
-      "artistName": "Kylie Minogue",
-      "albumName": "Body Language"
-
-    }, {
-      "songName": "Trapped in the Closet",
-      "artistName": "R Kelly",
-      "albumName": "TP3 Reloaded"
+      "name": "Rise",
+      "artist": "Katy Perry",
+      "album": "2016 Olympics",
+      "genre": "Pop"
 
     }
-
 
   ]
 }
