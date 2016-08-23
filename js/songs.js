@@ -19,26 +19,15 @@ function toggleHiddenMain() {
 
 var songs = []
 
-$.getJSON("songs.json").then(function (data) {
+$.getJSON("https://musichistory-7cb4f.firebaseio.com/songs").then(function (data) {
   songs = data.songs;
   populateSongs(songs)
 })
 
 
-var request = $.ajax({
-  url: "",
-  method: "POST",
-  data: { id : menuId },
-  dataType: "json"
-});
-
-request.done(function( data ) {
-  $( "#log" ).html( msg );
-});
-
 
 function loadMoreSongs () {
-  $.getJSON("othersongs.json").then(function (data) {
+  $.getJSON("https://musichistory-7cb4f.firebaseio.com/othersongs").then(function (data) {
     var newSongs = data.songs
       newSongs.forEach(function (song) {
         songs.push(song)
