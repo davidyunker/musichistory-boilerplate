@@ -1,6 +1,5 @@
 "use strict";
 
-$(document).ready(function () {
 
 //SPA Functionality
 
@@ -19,22 +18,42 @@ function toggleHiddenMain() {
 
 var songs = []
 
-$.getJSON("https://musichistory-7cb4f.firebaseio.com/songs").then(function (data) {
-  songs = data.songs;
-  populateSongs(songs)
-})
+// $.getJSON("songs.json").then(function (data) {
+//   songs = data.songs;
+//   populateSongs(songs)
+// })
+
+$.ajax({
+      url: 'https://musichistory-7cb4f.firebaseio.com/songs/-KPt6yM-OsasVZNpvY3V.json'
+    }).done(function(songData) {
+      console.log(songData)
+      songs = songData.songs;
+      populateSongs(songs);
+    });
 
 
 
 function loadMoreSongs () {
-  $.getJSON("https://musichistory-7cb4f.firebaseio.com/othersongs").then(function (data) {
-    var newSongs = data.songs
-      newSongs.forEach(function (song) {
-        songs.push(song)
-      })
-    populateSongs(songs)
+  $.ajax({
+    url: 'https://musichistory-7cb4f.firebaseio.com/othersongs/-KPt7DD4ZrrP-Lvi45jk.json'
+  }).done(function(songData) {
+    var newSongs = songData.songs;
+    newSongs.forEach(function (song) {
+      songs.push(song)
+    })
+    populateSongs(songs);
   })
 }
+  // $.getJSON("othersongs.json").then(function (data) {
+  //   var newSongs = data.songs
+  //     newSongs.forEach(function (song) {
+  //       songs.push(song)
+  //     })
+  //   populateSongs(songs)
+  // })
+
+
+
 
 
 
@@ -85,6 +104,5 @@ function deleteSong (evt) {
   console.log(evt)
 }
 
-});
 
 
